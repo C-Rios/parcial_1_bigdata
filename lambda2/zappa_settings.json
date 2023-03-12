@@ -12,7 +12,7 @@
         "events": [{
             "function": "apps.f",
             "event_source": {
-                  "arn":  "arn:aws:s3:::raw-casas",
+                  "arn":  "arn:aws:s3:::casas-final-104",
                   "events": [
                     "s3:ObjectCreated:*"
                   ]

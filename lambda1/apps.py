@@ -21,8 +21,8 @@ def f(event, context):
     date = datetime.now()
 
     client = boto3.client("s3")
-    client.put_object(Body=contenidoWeb, Bucket="raw-casas",
-                      Key=f'landing-casas-{date.strftime("%Y-%m-%d")}.html')
+    client.put_object(Body=contenidoWeb, Bucket="landing-casas-104",
+                      Key=f'{date.strftime("%Y-%m-%d")}.html')
 
     return {
         'statusCode': 201,

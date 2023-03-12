@@ -60,15 +60,15 @@ def f(event, context):
     date = datetime.now()
 
     s3 = boto3.resource('s3')
-    bucket = s3.Bucket('raw-casas')
-    obj = bucket.Object(f'landing-casas-{date.strftime("%Y-%m-%d")}.html')
+    bucket = s3.Bucket('landing-casas-104')
+    obj = bucket.Object(f'{date.strftime("%Y-%m-%d")}.html')
     body = obj.get()['Body'].read()
 
     csv_acum = csv_parse(body=body, date=date)
 
     client = boto3.client('s3')
-    client.put_object(Body=csv_acum, Bucket="processed-casas",
-                      Key=f'casas-final-{date.strftime("%Y-%m-%d")}.csv')
+    client.put_object(Body=csv_acum, Bucket="casas-final-104",
+                      Key=f'{date.strftime("%Y-%m-%d")}.csv')
 
     return {
         'statusCode': 201,
