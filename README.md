@@ -49,11 +49,3 @@ En resumen, el proceso descrito es un ejemplo de cómo se pueden utilizar tecnol
 En la actualidad, la automatización de procesos es una herramienta clave en la eficiencia y la productividad de las empresas y organizaciones. En el caso específico del proceso que se ha realizado, se destacan los múltiples beneficios para los interesados en el mercado inmobiliario en el sector de Chapinero, como el acceso a información actualizada de manera automatizada, la reducción del tiempo y esfuerzo en la obtención de información y la posibilidad de tomar decisiones más informadas basadas en datos reales y precisos.
 
 En conclusión, la automatización de procesos es una herramienta clave en la eficiencia y la productividad de las empresas. Como se evidenció en este caso, resulta en una solución escalable, flexible y altamente disponible que puede ser adaptada a las necesidades de distintos usuarios. Teniendo en cuenta y como se ha mencionado anteriormente, que la integración con otras tecnologías, como pruebas unitarias y GitHubActions, permite una mayor automatización del proceso y reduce la necesidad de intervención manual, lo que puede ahorrar tiempo y reducir errores.
-
- 
-
-Descripción repositorio:
-
- 
-
-Este repositorio contiene un proyecto de automatización de la descarga y procesamiento de información de venta de casas en el sector de Chapinero en Colombia desde la página web de Mitula. Lo anterior, utilizando AWS Lambda y Zappa para crear dos funciones Lambda que se ejecutan automáticamente todos los lunes a las 9 a.m. La primera función Lambda descarga la primera página de resultados de Mitula y guarda el archivo HTML en un bucket S3; mientras que la segunda procesa el archivo HTML utilizando BeautifulSoup y extrae información de cada casa en la página, creando un archivo CSV con la información de cada propiedad. Dicho proyecto incluye pruebas unitarias utilizando pytest y un mock para probar la función de descarga. Además, se creó un pipeline de despliegue continuo con GitHubActions que incluye la revisión de código limpio con flake8, la ejecución de pruebas unitarias y el despliegue automático en AWS.
