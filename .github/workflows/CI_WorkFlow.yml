@@ -27,26 +27,8 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-
-      # Setup virtualenv
-      - name: Virtual enviroment setup
-        run: pip install virtualenv
-        
-      # First lambda check
-      - name: Lambda1 setup
-        run: |
-          cd lambda1/
-          virtualenv env
-          source env/bin/activate
-          pip install -r requirements.txt
       
-      - name: Lambda1 flake8 and unittesting
-        run: |
-          cd lambda1/
-          source env/bin/activate
-          flake8 .
-          pytest
-      
+      # Config AWS credentials with Github secrets
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -54,4 +36,67 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
+
+      # Setup virtualenv
+      - name: Virtual enviroment setup
+        run: pip install virtualenv
+        
+      # First lambda: HTML Download
+      
+      # Virtual enviroment setup
+      - name: Lambda1 setup
+        run: |
+          cd lambda1/
+          virtualenv env
+          source env/bin/activate
+          pip install -r requirements.txt
+          deactivate
+          
+      
+      # Clean code and Unit testing
+      - name: Lambda1 flake8 and unittesting
+        run: |
+          cd lambda1/
+          source env/bin/activate
+          flake8 .
+          pytest
+          deactivate
+      
+      # AWS Update Lambda1
+      - name: Lambda1 AWS update
+        run: |
+          cd lambda1/
+          source env/bin/activate
+          zappa schedule dev
+          zappa update
+          deactivate
+          
+      # Second lambda: HTML transformation into CSV
+      
+      # Virtual enviroment setup
+      - name: Lambda2 setup
+        run: |
+          cd lambda2/
+          virtualenv env
+          source env/bin/activate
+          pip install -r requirements.txt
+      
+      # Clean code and Unit testing
+      - name: Lambda2 flake8 and unittesting
+        run: |
+          cd lambda2/
+          source env/bin/activate
+          flake8 .
+          pytest
+          deactivate
+      
+      # AWS Update Lambda2
+      - name: Lambda2 AWS update
+        run: |
+          cd lambda2/
+          source env/bin/activate
+          zappa update
+          deactivate
+      
+      
           
