@@ -42,6 +42,7 @@ jobs:
       
       - name: Lambda1 flake8 and unittesting
         run: |
+          cd lambda1/
           source env/bin/activate
           flake8 .
           pytest
