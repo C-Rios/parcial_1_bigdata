@@ -1,28 +1,21 @@
-# Parcial 1 – Big Data e Ingeniería de Datos
 
+<div align="center">
 
-<p style="text-align: right;">
-
-Universidad Sergio Arboleda
-
+ <h1>Parcial 1 – Big Data e Ingeniería de Datos</h1>
  
-
-Escuela de Ciencias Exactas e Ingeniería
-
+ <p>Universidad Sergio Arboleda</p>
  
+ <p>Escuela de Ciencias Exactas e Ingeniería</p>
 
-Ingeniería en Ciencias de la Computación e Inteligencia Artificial
+ <p>Ingeniería en Ciencias de la Computación e Inteligencia Artificial</p>
 
+ <p>Big Data e Ingeniería de Datos</p>
 
+ <b>Presentan: Juan Camilo De Los Ríos Hernández y Roxanyffer Andreina Velasco Contreras</b>
 
-Big Data e Ingeniería de Datos
+</div>
 
-
-
-**Presentan: Juan Camilo De Los Ríos Hernández y Roxanyffer Andreina Velasco Contreras**
-
-</p> 
-
+</br>
 
 ## Introducción
 
