@@ -1,0 +1,5 @@
+[flake8]
+exclude = .git,__pycache__,env,pytest_cache
+ignore = E501
+per-file-ignores =
+   apps.py:176:E501

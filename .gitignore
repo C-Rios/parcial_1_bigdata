@@ -1,0 +1,9 @@
+# Lambda 1 config files
+lambda1/env
+lambda1/__pycache__
+lambda1/.pytest_cache
+
+# Lambda 2 config files
+lambda2/env
+lambda2/__pycache__
+lambda2/.pytest_cache
