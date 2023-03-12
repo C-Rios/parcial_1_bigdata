@@ -28,8 +28,29 @@ jobs:
         with:
           python-version: '3.8'
 
-      # Runs a single command using the runners shell
-      - name: Testing
+      # Setup virtualenv
+      - name: Virtual enviroment setup
+        run: pip install virtualenv
+        
+      # First lambda check
+      - name: Lambda1 setup
         run: |
           cd lambda1/
-          ls -a
+          virtualenv env
+          source env/bin/activate
+          pip install -r requirements.txt
+      
+      - name: Lambda1 flake8 and unittesting
+        run: |
+          source env/bin/activate
+          flake8 .
+          pytest
+      
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
+          aws-region: us-east-1
+          
