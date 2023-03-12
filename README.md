@@ -1,6 +1,7 @@
 # Parcial 1 – Big Data e Ingeniería de Datos
 
- 
+
+<p style="text-align: right;">
 
 Universidad Sergio Arboleda
 
@@ -20,7 +21,8 @@ Big Data e Ingeniería de Datos
 
 **Presentan: Juan Camilo De Los Ríos Hernández y Roxanyffer Andreina Velasco Contreras**
 
- 
+</p> 
+
 
 ## Introducción
 
