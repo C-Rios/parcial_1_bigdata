@@ -11,7 +11,7 @@
         "apigateway_enabled": false,
         "events": [{
             "function": "apps.f",
-            "expression": "cron(0 9 ? * 1 *)" 
+            "expression": "cron(0 14 ? * 1 *)" 
         }]
     }
 }
